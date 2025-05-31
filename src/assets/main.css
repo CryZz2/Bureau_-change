@@ -1,0 +1,230 @@
+html,
+body,
+.full-bg {
+    height: 100%;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.full-bg {
+    min-height: 90vh;
+    min-width: 100vw;
+    background: linear-gradient(135deg, #0ea6e9 0%, #1cc6e3 100%);
+    display: flex;
+    background-size: 400% 400%;
+    animation: gradientMove 10s ease-in-out infinite;
+    align-items: center;
+    justify-content: center;
+}
+
+@keyframes gradientMove {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.main-table {
+    width: 92vw;
+    max-width: 1400px;
+    margin: 24px;
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px 0 #0a2a5c33;
+    padding: 36px 0 36px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    backdrop-filter: blur(6px);
+}
+
+h1 {
+    color: #fff;
+    font-size: 2.7rem;
+    font-weight: 800;
+    margin-bottom: 22px;
+    margin-top: 0;
+    text-align: center;
+    text-shadow: 0 6px 24px #0a2a5c55;
+    letter-spacing: 1px;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 36px;
+    gap: 14px;
+    font-size: 1.3rem;
+    color: #fff;
+    font-weight: 600;
+}
+
+.input-row input[type="number"] {
+    padding: 12px 28px;
+    border-radius: 18px;
+    border: none;
+    font-size: 1.35rem;
+    width: 180px;
+    background: #eaf6fb;
+    box-shadow: 0 2px 12px #0a2a5c22;
+    text-align: center;
+}
+
+.tableau {
+    width: 97%;
+    max-width: 1300px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 54px;
+}
+
+@media (max-width: 900px) {
+    .tableau {
+        grid-template-columns: 1fr;
+        gap: 18px 0;
+    }
+}
+
+.devise {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(5, 118, 184, 0.85);
+    border-radius: 22px;
+    padding: 22px 42px;
+    font-size: 1.38rem;
+    font-weight: 600;
+    color: #fff;
+    min-width: 0;
+    box-shadow: 0 4px 24px #0a2a5c33;
+    margin-bottom: 0;
+    backdrop-filter: blur(2px);
+    border: 1.5px solid #1cc6e355;
+    transition: transform 0.12s;
+}
+
+.devise:hover {
+    transform: scale(1.025);
+    box-shadow: 0 8px 32px #0a2a5c55;
+}
+
+.devise-left {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-direction: row;
+    /* <-- assure l'affichage en ligne */
+}
+
+.devise img {
+    width: 42px;
+    height: 32px;
+    border-radius: 6px;
+    border: 1.5px solid #e0e6ef;
+    background: #fff;
+    box-shadow: 0 2px 8px #0a2a5c22;
+}
+
+.devise-nom {
+    font-weight: 800;
+    font-size: 1.28rem;
+    color: #fff;
+    letter-spacing: 0.5px;
+    writing-mode: initial;
+    /* <-- annule tout writing-mode vertical */
+    text-orientation: initial;
+    white-space: normal;
+    /* <-- force le texte sur une ligne */
+}
+
+.devise-right {
+    background: #0a2a5c;
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.22rem;
+    border-radius: 18px;
+    padding: 14px 32px;
+    min-width: 140px;
+    text-align: right;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 2px 12px #0a2a5c33;
+    letter-spacing: 0.5px;
+}
+
+.devise-code {
+    font-size: 1.13rem;
+    margin-left: 8px;
+    opacity: 0.85;
+}
+
+p {
+    text-align: right;
+    color: #eaf6fb;
+    font-size: 1.08rem;
+    margin: 28px 16px 0 0;
+    opacity: 0.85;
+}
+
+@media (max-width: 900px) {
+    .main-table {
+        max-width: 98vw;
+        padding: 18px 0;
+        border-radius: 18px;
+    }
+
+    .tableau {
+        grid-template-columns: 1fr;
+        gap: 18px 0;
+        max-width: 98vw;
+    }
+}
+
+@media (max-width: 600px) {
+    .main-table {
+        padding: 8px 0;
+        border-radius: 10px;
+    }
+
+    .devise {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 12px 10px;
+        font-size: 1rem;
+    }
+
+    .devise-right {
+        margin-top: 8px;
+        padding: 10px 18px;
+        font-size: 1rem;
+        min-width: 90px;
+    }
+
+    .devise img {
+        width: 32px;
+        height: 24px;
+    }
+
+    .input-row {
+        flex-direction: column;
+        gap: 6px;
+        font-size: 1rem;
+    }
+
+    .input-row input[type="number"] {
+        width: 90vw;
+        max-width: 180px;
+        font-size: 1rem;
+    }
+}
